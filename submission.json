@@ -1,0 +1,14 @@
+[
+    {
+        "name": "John",
+        "surname": "Doe",
+        "student_id": "123456",
+        "submission_file_name": "john_doe_submission.csv"
+    },
+    {
+        "name": "Jane",
+        "surname": "Smith",
+        "student_id": "789012",
+        "submission_file_name": "jane_smith_submission.csv"
+    }
+]
