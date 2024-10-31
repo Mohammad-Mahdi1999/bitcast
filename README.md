@@ -33,8 +33,7 @@ Replace YYYY-MM-DD with the desired end date and HH:MM:SS with the desired time.
 ```
 python two-weeks.py -d "2024-10-30" -t "10:00:00"
 ```
-Here's a README file for your project:
-Bitcoin Price FetcherThis project fetches Bitcoin prices for a given date range and saves the data into CSV files. It uses the yfinance library to download historical Bitcoin prices of two weeks before the date and processes the data to create two CSV files: window.csv and forecast_actual.csv.
+This project fetches Bitcoin prices for a given date range and saves the data into CSV files. It uses the yfinance library to download historical Bitcoin prices from two weeks before the specified date and processes the data to create two CSV files: window.csv and forecast_actual.csv.
 
 ## Making Test Competition Submissions
 Use algorithms.py to generate test competition submissions. This script contains implementations of various machine learning algorithms.
