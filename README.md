@@ -23,16 +23,29 @@ pip install -r requirements.txt
 ## Usage
 ## Generating Competition Source Files
 Use two-weeks.py to fetch Bitcoin prices and generate source files:
+
+```
+python two-weeks.py -d YYYY-MM-DD -t HH:MM:SS
+```
+Replace YYYY-MM-DD with the desired end date and HH:MM:SS with the desired time.
+
+- Example
 ```
 python two-weeks.py -d "2024-10-30" -t "10:00:00"
 ```
-it will make last two weeks prices as first week 
+Here's a README file for your project:
+Bitcoin Price FetcherThis project fetches Bitcoin prices for a given date range and saves the data into CSV files. It uses the yfinance library to download historical Bitcoin prices of two weeks before the date and processes the data to create two CSV files: window.csv and forecast_actual.csv.
 
 ## Making Test Competition Submissions
 Use algorithms.py to generate test competition submissions. This script contains implementations of various machine learning algorithms.
 
-#Calculating Results and Generating Leaderboard
-Use bitcoin_competition.py to process submissions and calculate the leaderboard:
+# Calculating Results and Generating Leaderboard
+Use bitcoin_competition.py to process submissions and calculate the leaderboard. This project processes Bitcoin price submissions, calculates the Root Mean Squared Error (RMSE) for each submission, and generates a leaderboard. It uses the pandas library for data manipulation, numpy for numerical operations, and scikit-learn for calculating RMSE. 
+
+```
+python submission_processor.py submission_folder submission_json output_file
+```
+- Example
 ```
 python bitcoin_competition.py submissions submission.json leaderboard.json
 ```
