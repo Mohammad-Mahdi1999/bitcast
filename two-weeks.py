@@ -36,22 +36,31 @@ def get_prices(end_date, time):
     
     return filtered_df
 
-def save_to_csv(df, end_date):
+def save_to_csv(df, end_date, time):
     
     end_date_time_delta = (datetime.strptime(end_date, '%Y-%m-%d') + timedelta(days=1)).strftime('%Y-%m-%d')
 
     # Calculate the midpoint date
     midpoint_date = (datetime.strptime(end_date_time_delta, '%Y-%m-%d') - timedelta(days=7)).strftime('%Y-%m-%d')
-    start_date = (datetime.strptime(midpoint_date, '%Y-%m-%d') - timedelta(days=7)).strftime('%Y-%m-%d')
+    start_date = (datetime.strptime(midpoint_date, '%Y-%m-%d') - timedelta(days=7) + timedelta(days=1)).strftime('%Y-%m-%d')
+    
     
     print("start_date",start_date)
     print("midpoint_date",midpoint_date)
     print("end_date",end_date)
     print("end_date_time_delta",end_date_time_delta)
+    
+    start_filter = f"{start_date} {time}"
+    mid_filter = f"{midpoint_date} {time}"
+    end_date_time_delta_filter = f"{end_date_time_delta} {time}"
 
+    print("start_filter",start_filter)
+    print("mid_filter",mid_filter)
+    print("end_date_time_delta_filter",end_date_time_delta_filter)
+    
     # Split the DataFrame into two parts
-    window_df = df.loc[start_date:midpoint_date]
-    forecast_actual_df = df.loc[midpoint_date:end_date_time_delta]
+    window_df = df.loc[start_filter :mid_filter][:-1]
+    forecast_actual_df = df.loc[mid_filter:end_date_time_delta_filter]
     
     print(window_df)
     print(forecast_actual_df)
@@ -74,4 +83,4 @@ if __name__ == "__main__":
     df = get_prices(args.date, args.time)
     
     # Save the DataFrame with 'Close' prices to CSV files
-    save_to_csv(df, args.date)
+    save_to_csv(df, args.date, args.time)
