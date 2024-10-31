@@ -7,7 +7,7 @@ import argparse
 import json
 
 # Step 1: Load the actual Bitcoin prices
-actual_prices = pd.read_csv('actual_prices.csv')
+actual_prices = pd.read_csv('forecast_actual.csv')
 actual_prices.set_index('Datetime', inplace=True)
 
 # Step 2: Function to calculate RMSE

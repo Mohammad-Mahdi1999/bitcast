@@ -1,10 +1,18 @@
 [
     {
         "rank": 1,
-        "user_name": "John Doe",
-        "student_id": "123456",
+        "user_name": "Jane Smith",
+        "student_id": "789012",
         "submission_number": 1,
-        "filename": "john_doe_submission.csv",
-        "rmse": 0.0
+        "filename": "RandomForest_predictions.csv",
+        "rmse": 3419.095310957065
+    },
+    {
+        "rank": 2,
+        "user_name": "Jane Smith",
+        "student_id": "2334",
+        "submission_number": 1,
+        "filename": "LinearRegression_predictions.csv",
+        "rmse": 4716.573054910155
     }
 ]

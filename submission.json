@@ -9,6 +9,12 @@
         "name": "Jane",
         "surname": "Smith",
         "student_id": "789012",
-        "submission_file_name": "jane_smith_submission.csv"
+        "submission_file_name": "RandomForest_predictions.csv"
+    },
+    {
+        "name": "Jane",
+        "surname": "Smith",
+        "student_id": "2334",
+        "submission_file_name": "LinearRegression_predictions.csv"
     }
 ]
