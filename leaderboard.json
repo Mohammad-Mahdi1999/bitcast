@@ -2,7 +2,7 @@
     {
         "rank": 1,
         "user_name": "Jane Smith",
-        "student_id": "789012",
+        "user_id": "789012",
         "submission_number": 1,
         "filename": "RandomForest_predictions.csv",
         "rmse": 3419.095310957065
@@ -10,7 +10,7 @@
     {
         "rank": 2,
         "user_name": "Jane Smith",
-        "student_id": "2334",
+        "user_id": "2334",
         "submission_number": 1,
         "filename": "LinearRegression_predictions.csv",
         "rmse": 4716.573054910155

@@ -39,14 +39,14 @@ def process_submissions(submission_folder, submission_json):
         
         rmse = calculate_rmse(actual_prices['Close'], user_predictions['Close'])
         user_name = f"{submission['name']} {submission['surname']}"
-        student_id = submission['student_id']
+        user_id = submission['user_id']
         
         # Track submission count
-        if student_id not in submission_count:
-            submission_count[student_id] = 0
-        submission_count[student_id] += 1
+        if user_id not in submission_count:
+            submission_count[user_id] = 0
+        submission_count[user_id] += 1
         
-        results.append((user_name, student_id, submission_count[student_id], os.path.basename(file_path), rmse))
+        results.append((user_name, user_id, submission_count[user_id], os.path.basename(file_path), rmse))
     
     return results
 
@@ -55,12 +55,12 @@ def generate_leaderboard(results, output_file):
     leaderboard = sorted(results, key=lambda x: x[4])
     print("Leaderboard:")
     leaderboard_data = []
-    for rank, (user_name, student_id, submission_number, filename, rmse) in enumerate(leaderboard, start=1):
-        print(f"{rank}. {user_name} ({student_id}) - Submission {submission_number} - {filename} - RMSE: {rmse:.4f}")
+    for rank, (user_name, user_id, submission_number, filename, rmse) in enumerate(leaderboard, start=1):
+        print(f"{rank}. {user_name} ({user_id}) - Submission {submission_number} - {filename} - RMSE: {rmse:.4f}")
         leaderboard_data.append({
             "rank": rank,
             "user_name": user_name,
-            "student_id": student_id,
+            "user_id": user_id,
             "submission_number": submission_number,
             "filename": filename,
             "rmse": rmse
